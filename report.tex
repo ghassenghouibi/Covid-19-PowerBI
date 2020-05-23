@@ -1,0 +1,125 @@
+\documentclass[french,a4paper,11pt,oneside]{book}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[rightlabels]{titletoc}
+\usepackage{pdfpages}
+\usepackage{grffile}
+\usepackage[export]{adjustbox}
+\usepackage{listings}
+\usepackage{datetime} 
+\usepackage{sectsty}
+\renewcommand{\contentsname}{Sommaire}
+\renewcommand{\thesection}{\Roman{section}} 
+
+\titlecontents{subsection}% <section>
+[2.35em]% <left>
+{\small\contentsmargin{1.5em}}% <above-code>
+{\thecontentslabel.\hspace{3pt}}% <numbered-entry-format>; you could also use {\thecontentslabel. } to show the numbers
+{}% <numberless-entry-format>
+{\enspace\titlerule*[0.5pc]{.}~\contentspage}% <filler-page-format>
+
+\usepackage{float}
+\usepackage{color,soul}
+
+\definecolor{googleblue}{HTML}{0F9D58}
+\definecolor{googlegreen}{HTML}{4285F4}
+\definecolor{googlered}{HTML}{DB4437}
+\definecolor{googleyellow}{HTML}{F4B400}
+
+\sectionfont{\color{googlered} \normalfont} % sets colour of sections
+\subsectionfont{\color{googlegreen} \normalfont} % sets colour of sections
+\subsubsectionfont{\color{googleblue} \normalfont} % sets colour of sections
+
+\author{\color{blue} \raggedright GHOUIBI GHASSEN}
+\title{\color{red} \normalfont\huge Modélisation de Gestionnaire de stock}
+\begin{document}
+ \begin{titlepage}
+  \centering 
+
+  \vspace{1cm}
+
+  \vspace{0.5cm}
+  {\huge\bfseries Power BI\par}
+  \vspace{0.5cm}
+  \vfill
+  {\Large\itshape \color{googlegreen} Data visualisation sur dataset de Covid-19\par}
+  \vfill
+  % Bottom of the page
+  {\large Auteur \par
+  GHOUIBI Ghassen\textsc{}\par}
+  \vspace{1cm}
+  {\large Encadré par \par
+ Mme Rakia Jaziri\textsc{}\par
+ 
+  }
+ \end{titlepage}
+	\tableofcontents
+	
+	\newpage
+	\section{Introduction}{
+		Ce rapport contient les étapes réaliser pour répondre au question du projet détaille en section, il sera accompagné du projet exporter.\\
+		\subsection{Power BI}{
+		Power BI\footnote{Cette défintion est prise de wikipedia \url{https://en.wikipedia.org/wiki/Power_BI}} est un service d'analyse commerciale de Microsoft. Il vise à fournir des visualisations interactives et des capacités de Business Intelligence avec une interface suffisamment simple pour que les utilisateurs finaux puissent créer leurs propres rapports et tableaux de bord.	
+		}
+		\subsection{Objectif}{
+			Le choix de travailler sur le covid en respectant les consignes du rapport notre dataset est sous ce formet (20000,6).\\
+			%TODO
+			Notre objectif c'est prédire des résultats sur quelques jours à traves notre dataset.
+		}
+	
+	}
+
+	\section{Mise en place}{
+		Aprés faire le choix sur l'outil qu'on va utiliser dans ce rapport, il est nécessaire quelques installation à faire avant d'installer Power BI.\\
+			\subsection{Machine Virtuelle}{
+				On fait les choix de configuration suivante aprés avoir télécharger \texttt {Windows 10} grâce au lien \href{https://www.microsoft.com/fr-fr/software-download/windows10ISO}{suivant}.
+				
+				\includegraphics[width=350pt]{config}
+			}
+			\subsection{Installation}{
+				Aprés avoir installer notre \texttt{Windows 10} sur notre machine virtuelle et passer l'étape de configuration de windows on peut télécharger \texttt{Power Bi}.
+				Soit on sur le \texttt{Microsoft store}, soit à traves ce \href{https://www.microsoft.com/fr-fr/download/details.aspx?id=58494}{lien}.
+				Maintenant il faut juste ouvrir le logiciel est voici notre premier projet en Power BI.\\
+				\includegraphics[width=350pt]{done}
+			}
+	}
+
+	\section{Jeu de données}{
+		
+		\subsection{Chargement de données}{
+		}
+		\subsection{Nettoyage et transformation de données}{
+		}
+	
+		\subsection{Dashbord intelligent}{
+		
+		}
+
+		\subsection{Business Analytique}{
+			proposer et traiter un cas d’usage analytique en mettant l’accent sur l’étape de visualisation,
+		
+		}
+	
+		\subsection{Business Intelligence}{
+			Création de tableau de bord pour le suivi de l’activité de l’entreprise, Reporting, création de datamart, ....
+		
+		}
+		
+
+	}
+	
+	\section{Conclusion}{
+	
+	}
+
+
+	
+	
+
+\end{document} 
