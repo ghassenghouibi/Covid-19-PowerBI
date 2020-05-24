@@ -1,1 +1,6 @@
 *.png
+*.toc
+*.gz
+*.out
+*.aux
+*.log

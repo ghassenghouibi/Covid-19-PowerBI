@@ -48,7 +48,7 @@
   {\huge\bfseries Power BI\par}
   \vspace{0.5cm}
   \vfill
-  {\Large\itshape \color{googlegreen} Data visualisation sur dataset de Covid-19\par}
+  {\Large\itshape \color{googlegreen} Data visualisation sur les datasets : Covid-19,Ventes,Marketing\par}
   \vfill
   % Bottom of the page
   {\large Auteur \par
@@ -89,16 +89,35 @@
 				\includegraphics[width=350pt]{done}
 			}
 	}
+	\newpage
 
 	\section{Jeu de données}{
 		
 		\subsection{Chargement de données}{
+			Aprés avoir lancer \texttt{Power BI} on va cliquer sur {\itshape Obtenir les données} ensuite mettre le choix sur excel vu que nos données sont du format xlsx, aprés cliquer sur tranformer les données et voici un exemple :\\
+			\includegraphics[width=350pt]{data}
+			\\
+			Nos données sont importer dans \texttt{Power Query},On effectue un anaylse rapide sur notre dataset.
+			On remarque que les \texttt{id} sont des int, \texttt{Province\_State} est du text qui représente la ville des cas, \texttt{Country\_Region} représente les pays, les cas confirmées sont représenté par \texttt{Confirmed Cases} et les cas de décés par \texttt{Fatalities} on remarque aussi qu'il y a une corrélation entre Id et Date.\\
+			Pour résumé on a un data des cas confirmées et cas de décès tout les jour à partir du 22 Janvier 2020 jusqu'a 31 Mars notre études ce basé sur cette période.\\
 		}
 		\subsection{Nettoyage et transformation de données}{
+ 			Comment préciser dans la section d'avant, en effet notre dataset est propre est prêt sauf qu'il manque quelques ville sur les informations mais ce n'est trés dérangeant dans notre cas.\\
+ 			On clique sur appliquer est ferme dans \texttt{Power Query} et mainteant on peut regarder notre dataset aprés la transformation si jamais on a effectuer quelques opération comme supprimer les doubles et les valeurs abérantes.\\
+ 			\includegraphics[width=350pt]{clean}
+ 			
+ 		 	Dans cette partie on choisit de regrouper par pays en plus additionner tout les nombre de cas confirmé et cas de décès mais néanmoins l'opération va fausser nos résultats le nombre de cas représente une accumulation de nombre de cas.
+ 		 	
+ 		 	On va essayer de séparer la date pour faciliter la visualisation par jours avec un clique gacuhe sur la colone Date on ajouter une colone à partir de cet exemple, ensuite le même processus pour le mois et l'année.\\
+ 			\includegraphics[width=350pt]{day}
+ 			\\
+ 			On a aussi profiter d'extraire le nom du jour pour faire une visualisation sur les jours de la semaines.
 		}
-	
 		\subsection{Dashbord intelligent}{
-		
+			Dans cette section on souhaite réaliser un dashbord intelligent comme celui de google.\\
+			\includegraphics[width=450pt]{dashbord}
+			
+			
 		}
 
 		\subsection{Business Analytique}{
