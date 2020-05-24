@@ -48,7 +48,7 @@
   {\huge\bfseries Power BI\par}
   \vspace{0.5cm}
   \vfill
-  {\Large\itshape \color{googlegreen} Data visualisation sur les datasets : Covid-19,Ventes,Marketing\par}
+  {\Large\itshape \color{googlegreen} Data visualisation sur l'activité d'une entreprise en événementielles\par}
   \vfill
   % Bottom of the page
   {\large Auteur \par
@@ -68,13 +68,11 @@
 		Power BI\footnote{Cette défintion est prise de wikipedia \url{https://en.wikipedia.org/wiki/Power_BI}} est un service d'analyse commerciale de Microsoft. Il vise à fournir des visualisations interactives et des capacités de Business Intelligence avec une interface suffisamment simple pour que les utilisateurs finaux puissent créer leurs propres rapports et tableaux de bord.	
 		}
 		\subsection{Objectif}{
-			Le choix de travailler sur le covid en respectant les consignes du rapport notre dataset est sous ce formet (20000,6).\\
-			%TODO
-			Notre objectif c'est prédire des résultats sur quelques jours à traves notre dataset.
+			On va traiter trois sujets avec PowerBi notre idée de base est la suivante visualiser les pertes suite au covid 19 dans une société d'évenementielle notre but tout d'abord et visualiser la courbe du covid-19 et entirer des informations concernant le temps ou les cas de décès (comme ci c'était un client perdu), aprés il faudra prévoir l'activité de l'entreprise et la répartition des clients et nombre commandes finalement visualiser les événements récents pour prédire une reprise de l'activité de l'entreprise et mettre une stratégie en place.
 		}
 	
 	}
-
+	 \newpage
 	\section{Mise en place}{
 		Aprés faire le choix sur l'outil qu'on va utiliser dans ce rapport, il est nécessaire quelques installation à faire avant d'installer Power BI.\\
 			\subsection{Machine Virtuelle}{
@@ -85,8 +83,7 @@
 			\subsection{Installation}{
 				Aprés avoir installer notre \texttt{Windows 10} sur notre machine virtuelle et passer l'étape de configuration de windows on peut télécharger \texttt{Power Bi}.
 				Soit on sur le \texttt{Microsoft store}, soit à traves ce \href{https://www.microsoft.com/fr-fr/download/details.aspx?id=58494}{lien}.
-				Maintenant il faut juste ouvrir le logiciel est voici notre premier projet en Power BI.\\
-				\includegraphics[width=350pt]{done}
+				Maintenant il faut juste ouvrir le logiciel sur le desktop.
 			}
 	}
 	\newpage
@@ -94,47 +91,68 @@
 	\section{Jeu de données}{
 		
 		\subsection{Chargement de données}{
-			Aprés avoir lancer \texttt{Power BI} on va cliquer sur {\itshape Obtenir les données} ensuite mettre le choix sur excel vu que nos données sont du format xlsx, aprés cliquer sur tranformer les données et voici un exemple :\\
-			\includegraphics[width=350pt]{data}
-			\\
-			Nos données sont importer dans \texttt{Power Query},On effectue un anaylse rapide sur notre dataset.
-			On remarque que les \texttt{id} sont des int, \texttt{Province\_State} est du text qui représente la ville des cas, \texttt{Country\_Region} représente les pays, les cas confirmées sont représenté par \texttt{Confirmed Cases} et les cas de décés par \texttt{Fatalities} on remarque aussi qu'il y a une corrélation entre Id et Date.\\
-			Pour résumé on a un data des cas confirmées et cas de décès tout les jour à partir du 22 Janvier 2020 jusqu'a 31 Mars notre études ce basé sur cette période.\\
+			\subsubsection{Covid-19}{
+				Aprés avoir lancer \texttt{Power BI} on va cliquer sur {\itshape Obtenir les données} ensuite mettre le choix sur excel vu que nos données sont du format xlsx, aprés cliquer sur tranformer les données et voici un exemple :\\
+				\includegraphics[width=350pt]{data}
+				\\
+				Nos données sont importer dans \texttt{Power Query},On effectue un anaylse rapide sur notre dataset.
+				On s'intresser aux 5 premiers collones pour visualiser les résultats, on remarque que notre dataset est propre et ne nécissite pas d'actions de notre part.\\
+				
+			}
+			\subsubsection{Entreprise}{
+				De la même manière on va importer nos données d'entreprise sauf que ici le choix s'est porte sur une entreprise de livraisons malheureusement on n'a pas réussi a trouver un dataset qui nous permet de réaliser notre objectif.
+				En effet on va considerer que les commandes effectuer ici sont des commandes de billets pour un événement.\\
+				\includegraphics[width=350pt]{data2}
+			}
+		
 		}
 		\subsection{Nettoyage et transformation de données}{
- 			Comment préciser dans la section d'avant, en effet notre dataset est propre est prêt sauf qu'il manque quelques ville sur les informations mais ce n'est trés dérangeant dans notre cas.\\
- 			On clique sur appliquer est ferme dans \texttt{Power Query} et mainteant on peut regarder notre dataset aprés la transformation si jamais on a effectuer quelques opération comme supprimer les doubles et les valeurs abérantes.\\
- 			\includegraphics[width=350pt]{clean}
+ 			Comment préciser dans la section d'avant, en effet notre dataset est propre est prêt sauf qu'il y a quelque valeurs qui sont faussés à cause des accents français.\\
+ 			On clique sur remplacer les valeurs et remplacer ses valeurs la.\\
+ 			\includegraphics[width=350pt]{replace}
  			
- 		 	Dans cette partie on choisit de regrouper par pays en plus additionner tout les nombre de cas confirmé et cas de décès mais néanmoins l'opération va fausser nos résultats le nombre de cas représente une accumulation de nombre de cas.
- 		 	
- 		 	On va essayer de séparer la date pour faciliter la visualisation par jours avec un clique gacuhe sur la colone Date on ajouter une colone à partir de cet exemple, ensuite le même processus pour le mois et l'année.\\
- 			\includegraphics[width=350pt]{day}
- 			\\
- 			On a aussi profiter d'extraire le nom du jour pour faire une visualisation sur les jours de la semaines.
 		}
+		\newpage
 		\subsection{Dashbord intelligent}{
-			Dans cette section on souhaite réaliser un dashbord intelligent comme celui de google.\\
-			\includegraphics[width=450pt]{dashbord}
+			
+			\subsubsection{Covid-19}{
+				Dans cette section on souhaite réaliser un dashbord intelligent comme celui de google.\\
+				\includegraphics[width=450pt]{dashbord}
+				On a commencer par trouver les nombres infections par jours au cours du temps, ensuite pareil pour le nombre de morts en utilisant l'onglet questions réponses.
+				Pour visualiser la répartition dans le monde il faut mettre le choix sur la carte et aussi sur quel base on a choisi les infections.\\
+				Pour determiner le maximum de morts par pays on a choisi les graphiques à barres.\\
+				Finalement pour regrouper les cas de décès d'infections et de guérisons, il suffit de cliquer sur un pays pour visualiser tous ces courbes, Voici le résultat obtenu:\\
+				\includegraphics[width=450pt]{dash1}
+				\\
+				Voici un exemple sur la France: \\
+				\includegraphics[width=450pt]{dash2}
+			
+			}
+			\subsubsection{Business Analytique/BI}{
+				Comment détaillé au par avant on va se concentrer sur notre deuxième dataset qui comporte les commandes effectués.\\
+				\includegraphics[width=450pt]{dash3}
+				Dans cette étape on a visualiser les profits par an on constate déjà c'est une entreprise en plein croissance.\\
+				D'ou que les graphiques à barres groupes montre l'évolution du profit au cours de l'année sur l'ensemble de ventre.\\
+				On réalise aussi que la majorité de commande sont livré en class standard,et l'état de California qui constitue une grande part du marché devant l'état de New York.	
+			}
+		
+			\subsubsection{événement}{
+				On va supprimer beaucoup de champs qui ne sont pas utiles pour notre cas, on s'est focaliser sur la visualisation malheureusement il y a avait un problème pour afficher les coordonnées du GPS, on a visualiser le nombre d'événement par mois et séléctionner les lieux les plus fréquent, et la catégorie de l'évenement finalement on a optér pour le prix voici le dashboard correspondant:\\
+				\includegraphics[width=450pt]{dash4}
+			
+			}
 			
 			
+						
 		}
 
-		\subsection{Business Analytique}{
-			proposer et traiter un cas d’usage analytique en mettant l’accent sur l’étape de visualisation,
-		
-		}
 	
-		\subsection{Business Intelligence}{
-			Création de tableau de bord pour le suivi de l’activité de l’entreprise, Reporting, création de datamart, ....
-		
-		}
 		
 
 	}
-	
 	\section{Conclusion}{
-	
+		En comparaison avec DATAIKU que je trouve à mon avis largement supérieur niveau rapidité et fonctionnalités plus avancer néan moins Power Bi et trés orienté BI du point de vu d'un développeur.\\
+		Finalement Power BI présenté beaucoup de fonctionnalités à connaître pour le futur qui est un outils de premier rang pour une jeune entreprise.
 	}
 
 
